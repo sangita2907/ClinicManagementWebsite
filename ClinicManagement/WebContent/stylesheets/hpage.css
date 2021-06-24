@@ -1,0 +1,144 @@
+@CHARSET "ISO-8859-1";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+	background-color: whitesmoke;
+    opacity: 0.9;
+}
+
+/* Create a block for search box  */
+.searchContainer{
+    height: 60px;
+    width: 100%;
+    /* background-color: blue; */
+    display: block;
+}
+
+/* Place the search box in right  */
+.searchContainer div{
+    float: right;
+    padding: 13px;
+   /* padding-right: 25px;*/
+}
+
+/* Style the search box*/
+.searchContainer input[type=text]{
+    padding: 8px;
+    border: 1.5px solid blue;
+ 	background-color: white;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.container{
+    width: 100%;
+    height: 500px;
+    background-image: url('bphoto.jpg'); 
+   background-repeat: no-repeat;
+   background-size: cover;
+
+} 
+
+.container .heading{
+    padding-top: 150px;
+    padding-left: 100px;
+    font-size: 50px;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.container .body{
+    padding: 5px;
+    padding-left: 100px;
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.container2{
+    padding-bottom: 125px;
+}
+
+.container2 h1{
+    text-align: center;
+    padding-top: 25px;
+    font-family: 'Kiwi Maru', serif;
+}
+
+
+
+div .services{
+    height: 300px;
+    width: 400px;
+    margin-top: 50px;
+    margin-left: 5px;
+    float: left;
+    background-image: url('appointment.jpg');
+    background-size: cover;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: inline-block;
+   
+   
+}
+
+div .info{
+    height: 300px;
+    width: 700px;
+    display:inline-block;
+    margin-top: 50px;
+    margin-left: 30px;
+    
+}
+
+.info .body{
+    padding: 20px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+}
+
+input{
+    color: white;
+    background-color: blue;
+    border: none;
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: 30px;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 360%;
+    padding: 5px;
+    size: 150px;
+}
+
+div .service2{
+    height: 300px;
+    width: 400px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 5px;
+    background-image: url('new.webp');
+    background-size: cover;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: inline-block;
+   
+}
+ 
+.feed{
+    margin-right: none;
+    width: 100%;
+    height: 110px;
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+}

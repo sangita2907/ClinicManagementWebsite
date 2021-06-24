@@ -1,0 +1,47 @@
+@CHARSET "ISO-8859-1";
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background-image: url('images/doctor9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+.info{
+    margin: 100px;
+    margin-top: 70px;
+}
+
+
+.info p{
+    padding-left: 300px;
+    font-size: 25px;
+   /* background-color: blanchedalmond;*/
+    
+}
+
+.info table{
+    padding-top: 50px;
+    padding-left: 150px;
+}
+
+.info table .attri{
+    font-size: 20px;
+    font-weight: 40px;
+    padding: 5px;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.info table  .value{
+    font-size: 20px;
+    font-weight: 30px;
+    padding: 5px;
+    font-family: 'Kiwi Maru', serif;
+}

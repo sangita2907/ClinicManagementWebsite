@@ -1,0 +1,110 @@
+@CHARSET "ISO-8859-1";
+*{
+	text-decoration: none;
+}
+body{
+	 background-color: whitesmoke;
+    opacity: 0.9;
+}
+
+.box{
+	width: 100%;
+	background-image: url('images/back3.jpg');
+	background-size: cover;
+	backgound-repeat: no-repeat;
+}
+
+.box .titleBox{
+	margin-bottom:50px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.box .titleBox span{
+	width: 57%;
+	display: inline-block;
+	padding-left: 280px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 100px;
+	font-family: 'Pacifico', cursive;
+	
+}
+
+.box .titleBox form{
+	width: 250px;
+	items-align: center;
+	display: inline-block;
+	margin: auto;
+}
+
+.box .titleBox form select{
+	padding: 2px;
+	border: 1px solid blue;
+}
+
+.box .titleBox form button{
+	padding: 2px;
+	border: 1px solid blue;
+	color: blue;
+	background-color: lightgrey;
+	cursor: pointer;
+}
+
+table{
+	margin-left: 100px;
+	padding-bottom: 150px;
+	margin-right: 100px;
+}
+
+th{
+	padding: 10px;
+	font-size: 25px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	border: 1px solid;
+	text-align: center;
+}
+td{
+	padding: 10px;
+	font-size: 20px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-align: center;
+}
+
+td a i span.info{
+	visibility: hidden;
+	width: auto;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 6px;
+	padding: 3px;
+	position: absolute;
+	z-index: 1;
+	top: 270px;
+	left: 250px;
+	
+	
+}
+td a i span.info::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	border-width:5px;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+	
+}
+td a i:hover span.info{
+	visibility: visible;
+	
+}	
+
+
+tr:hover{
+	background-color: lightGreen;
+	font-size: 25px;
+}
