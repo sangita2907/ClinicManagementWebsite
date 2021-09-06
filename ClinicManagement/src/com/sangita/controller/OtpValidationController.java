@@ -43,7 +43,7 @@ public class OtpValidationController extends HttpServlet {
 		final String userName = "bhaskarmaity23@gmail.com";
 		final String password = "sunny1212";
 		
-		//gmail email server details 
+		//G-mail email server details 
 		Properties props = new Properties();
 		
 		//set key and value 
