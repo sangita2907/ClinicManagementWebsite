@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="stylesheets/hpage.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
     <title>Home</title>
@@ -47,14 +48,14 @@
                 <br><br>
                 Our Clinic has the best specialist doctors as we try to give you the best services.
                 <br><br>
-                <form action="doctorTiming" method="get">
+                <form action="viewAll.jsp">
                 	<button class="fa fa-search"></button>Check out Doctors
                 </form>
             </p>
         </div>
         <div class="service2"></div>
 
-        <!-- Motivational Quote -->
+        <!-- feedbacks -->
         <div class="feed">
         	<br><br>
             <p>&lsquo;&lsquo;Sleep is that golden chain that ties health and our bodies together.&rsquo;&rsquo;</p>

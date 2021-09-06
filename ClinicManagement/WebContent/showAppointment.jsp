@@ -10,11 +10,15 @@
 
 <html>
 <head>
-	<title>myClinic::appointments</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/showAppointment.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Yanone+Kaffeesatz:wght@300;600&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>myClinic::appointment Status</title>
+<link rel="stylesheet" type="text/css"
+	href="stylesheets/showAppointment.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Pacifico&family=Yanone+Kaffeesatz:wght@300;600&display=swap"
+	rel="stylesheet">
 </head>
 <body>
 	<%@include file="header.jsp"%>
@@ -22,7 +26,6 @@
 		String searchElement = request.getParameter("search");
 		List<Appointment> list = (List<Appointment>) session.getAttribute("appointment_list");
 		List<Doctor> doctorlist = (List<Doctor>) session.getAttribute("doctorList");
-		boolean recordFound = false;		
 	%>
 	<div class="box">
 		<div class="titleBox">
@@ -30,7 +33,7 @@
 			<form action="showAppointment.jsp" method="post">
 				<select name="searchBy">
 					<option value="-1">Search by Appointments</option>
-					<!-- <option value="active">Active Appointments</option> -->
+					<option value="active">Active Appointments</option>
 					<option value="today">Today's Appointments</option>
 					<%if (doctorUser != null) {%>
 						<option value="yourActiveAppointment">Your Appointments[Active]</option>
@@ -78,7 +81,7 @@
 				<%if (request.getParameter("searchBy") == null) {%>
 					<%for (Appointment app : list) {%>
 						<%if (user != null) {%>
-							<%if (app.getStatus().equals("incomplete")&& ((app.getDate().compareTo(date) > 0) || (app.getDate().compareTo(date) == 0) )) {%>
+							<%if (app.getStatus().equals("incomplete")&& (app.getDate().compareTo(date) > 0)) {%>
 								<%if (user.getRole().equals("admin")) {%>
 
 									<tr>
@@ -103,7 +106,6 @@
 										<%}%>
 										<td><%=app.getDate()%></td>
 									</tr>
-									<% recordFound = true; %>
 								<%} else {%>
 									<%if (app.getUserId() == user.getId()) {%>
 										<tr>
@@ -138,12 +140,11 @@
 											<%}%>
 											<td><%=app.getDate()%></td>
 										</tr>
-										<% recordFound = true; %>
 									<%}%>
 								<%}%>
 							<%}%>
 						<%} else if (doctorUser != null) {%>
-							<%if (app.getStatus().equals("incomplete") && ((app.getDate().compareTo(date) > 0) || (app.getDate().compareTo(date) == 0))) {%>
+							<%if (app.getStatus().equals("incomplete") && (app.getDate().compareTo(date) > 0)) {%>
 								<%if (doctorUser.getId() == app.getDoctorId()) {%>
 									<tr>
 										<td><%=app.getStatus()%></td>
@@ -166,7 +167,6 @@
 										<%} %> 
 										<td><%=app.getDate()%></td>
 									</tr>
-									<% recordFound = true; %>
 								<%}
 							 }
 						  }
@@ -175,7 +175,11 @@
 					<%}else if (request.getParameter("searchBy").equals("old")) {%>
 						<%for (Appointment app : list) {%>
 							<%if (user != null) {%>
-								<%if((app.getDate().compareTo(date) < 0) || ((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("success")  || app.getStatus().equals("not visited") ))){ %>
+								<%if ((app.getDate().compareTo(date) < 0)
+										|| ((app.getDate().compareTo(date) == 0) && (app
+												.getStatus().equals("success")))
+										|| ((app.getDate().compareTo(date) == 0) && (app
+												.getStatus().equals("not visited")))) {%>
 									<%if (user.getRole().equals("admin")) {%>
 										<tr>
 											<td>
@@ -200,7 +204,6 @@
 											<%}%>
 											<td><%=app.getDate()%></td>
 										</tr>
-										<% recordFound = true; %>
 									<%} else {%>
 										<%if (app.getUserId() == user.getId()) {%>
 											<tr>
@@ -226,12 +229,11 @@
 												<%}%>
 												<td><%=app.getDate()%></td>
 											</tr>
-											<% recordFound = true; %>
 										<%}%>
 									<%}%>
 								<%}%>
 							<%} else if (doctorUser != null) {%>
-								<%if((app.getDate().compareTo(date) < 0) ||((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("success")  || app.getStatus().equals("not visited") ))){ %>
+								<%if ((app.getDate().compareTo(date) < 0)|| ((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("success"))) || ((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("not visited")))) {%>
 									<%if (doctorUser.getId() == app.getDoctorId()) {%>
 										<tr>
 											<td><%=app.getStatus()%></td>
@@ -255,7 +257,6 @@
 											<%} %>
 											<td><%=app.getDate()%></td>
 										</tr>
-										<% recordFound = true; %>
 									<%}%>
 								<%}%>
 							<%}%>
@@ -290,7 +291,6 @@
 											<%} %>
 											<td><%=app.getDate()%></td>
 										</tr>
-										<% recordFound = true; %>
 									<%} else {%>
 										<%if (app.getUserId() == user.getId()) {%>
 											<tr>
@@ -325,7 +325,6 @@
 												}%>
 												<td><%=app.getDate()%></td>
 											</tr>
-											<% recordFound = true; %>
 										<%}%>
 									<%}%>
 								<%}%>
@@ -362,7 +361,6 @@
 										}%>
 										<td><%=app.getDate()%></td>
 									</tr>
-									<% recordFound = true; %>
 								<%}%>
 							<%}%>
 						<%}%>
@@ -371,7 +369,7 @@
 						<%for (Appointment app : list) {%>
 							<%if (doctorUser != null) {%>
 								<%if (app.getUserId() == doctorUser.getId()) {%>
-									<%if((app.getDate().compareTo(date) > 0) || (app.getDate().compareTo(date) == 0)){ %>
+									<%if(app.getDate().compareTo(date) > 0){ %>
 										<tr>
 											<td>
 												<a href="DeleteAppointment?a_id=<%=app.getId()%>"> 
@@ -404,12 +402,11 @@
 												}%>
 											<td><%=app.getDate()%></td>
 										</tr>
-										<% recordFound = true; %>
 									<%}%>
 								<%} %>
 							<%} else if (user != null) {%>
 								<%if (app.getUserId() == user.getId()) {%>
-									<%if((app.getDate().compareTo(date) > 0)|| (app.getDate().compareTo(date) == 0) ){ %>
+									<%if(app.getDate().compareTo(date) > 0){ %>
 										<tr>
 											<td>
 												<a href="DeleteAppointment?a_id=<%=app.getId()%>">
@@ -442,7 +439,6 @@
 										}%>
 									<td><%=app.getDate()%></td>
 								</tr>
-								<% recordFound = true; %>
 							<%}%>
 						<%}%>
 					<%}%>
@@ -452,7 +448,7 @@
 					<%for (Appointment app : list) {%>
 						<%if (doctorUser != null) {%>
 							<%if (app.getUserId() == doctorUser.getId()) {%>
-								<%if((app.getDate().compareTo(date) < 0) ||((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("success")  || app.getStatus().equals("not visited") ))){ %>
+								<%if(app.getDate().compareTo(date) < 0){ %>
 									<tr>
 										<td>
 											<%=app.getStatus() %>
@@ -476,13 +472,11 @@
 											}%>
 										<td><%=app.getDate()%></td>
 									</tr>
-									<% recordFound = true; %>
 								<%}%>
 							<%} %>
 						<%} else if (user != null) {%>
 							<%if (app.getUserId() == user.getId()) {%>
-								<%-- <%if(app.getDate().compareTo(date) < 0){ %> --%>
-								<%if((app.getDate().compareTo(date) < 0) || ((app.getDate().compareTo(date) == 0) && (app.getStatus().equals("success")  || app.getStatus().equals("not visited") ))){ %>
+								<%if(app.getDate().compareTo(date) < 0){ %>
 									<tr>
 										<td>
 											<%=app.getStatus() %>
@@ -506,16 +500,10 @@
 										}%>
 									<td><%=app.getDate()%></td>
 								</tr>
-								<% recordFound = true; %>
 							<%}%>
 						<%}%>
 					<%}%>
 				<%}%>
-			<%} %>
-			<%if(recordFound == false){ %>
-				<tr>
-					<td colspan=9 style="color: red; font-size: 30px; border: 2px dotted red;"><%="No Record Found!!" %></td>
-				</tr>
 			<%} %>
 		</table>
 		</div>

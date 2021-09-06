@@ -58,7 +58,7 @@
             </div>
 
 
-            <p>Don't have an account?<a href="signinFormPart1.jsp">Sign Up</a></p>
+            <p>Don't have an account?<a href="signinForm.jsp">Sign Up</a></p>
 
         </form>
     </div>
