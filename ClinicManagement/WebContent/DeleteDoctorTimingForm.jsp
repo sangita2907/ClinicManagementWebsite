@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>myClinic::Doctor Timing</title>
-<!-- Insert required files -->
+	<!-- Insert required files -->
     <link rel="stylesheet" type="text/css" href="stylesheets/FormS.css">
 </head>
 <body>
