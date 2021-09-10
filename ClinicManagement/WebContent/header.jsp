@@ -49,7 +49,7 @@
                 <% }else{ %>
                 	<a href="index.jsp"><li>Home</li></a>
                 	<a href="aboutUs.jsp"><li>About us</li></a>
-                	<a href="signinForm.jsp"><li>Signup</li></a>
+                	<a href="signinFormPart1.jsp"><li>Signup</li></a>
                 	<a href="UserLoginForm.jsp"><li>Login</li></a>
                 <% } %>
                 

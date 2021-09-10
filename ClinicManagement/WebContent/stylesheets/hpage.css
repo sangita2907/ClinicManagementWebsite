@@ -101,7 +101,7 @@ div .info{
 }
 
 input{
-    color: white;
+    /* color: white; */
     background-color: blue;
     border: none;
     padding: 2px;

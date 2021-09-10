@@ -78,7 +78,14 @@
 	       				<% }else { 
 	       					for(int i = 0; i < dayList.size(); i++){ 
 	       				%>
-	       						<%=dayList.get(i) + " --> " + startTimeList.get(i) + "-" + endTimeList.get(i) +"<br/>"%>   
+	       						<%if(startTimeList.get(i) <= 11 && endTimeList.get(i) <= 11){%>
+			       					<%=dayList.get(i) + " --> " + startTimeList.get(i) +" A.M - " + endTimeList.get(i) +" A.M<br/>"%>   
+			       				<%}else if(startTimeList.get(i) >= 12 && endTimeList.get(i) >= 12){  %>
+			       					<%=dayList.get(i) + " --> " + (startTimeList.get(i)-12) +" P.M - " + (endTimeList.get(i) - 12) +" P.M<br/>"%>   
+			       				<%}else if(startTimeList.get(i) <= 11 && endTimeList.get(i) >= 12){  %>
+			       					<%=dayList.get(i) + " --> " + startTimeList.get(i) +" A.M - " + (endTimeList.get(i) - 12) +" P.M<br/>"%>   
+			       				<%} %>
+	       						<%-- <%=dayList.get(i) + " --> " + startTimeList.get(i) + "-" + endTimeList.get(i) +"<br/>"%>    --%>
 	       				
 	       					<% } %> 
 	       				<%} %>     			
